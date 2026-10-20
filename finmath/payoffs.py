@@ -3,28 +3,28 @@
 import numpy as np
 
 def call(spot, strike, premium):
-    payoff = np.max(np.asarray(spot) - strike,0)
-    profit = (payoff - premium)
-    return payoff, profit 
-# returns payoff and profit for a long call
-
-def put(spot, strike, premium):
-    payoff = np.maximum(strike - np.asarray(spot),0)
+    """Return payoff and profit for a long call."""
+    spot = np.asarray(spot, dtype=float)
+    payoff = np.maximum(spot - strike, 0)
     profit = payoff - premium
     return payoff, profit
-# returns payoff and prift for a long put
+
 
 def forward(spot, delivery_price):
-    payoff = np.asarray(spot) - delivery_price
-    return payoff
-# Return payoff for a long forward at maturity.
-# The payoff is the same as profit for a long forward.
+    """Return payoff and profit for a long forward."""
+    spot = np.asarray(spot, dtype=float)
+    payoff = spot - delivery_price
+    profit = payoff.copy()
+    return payoff, profit
+
 
 def futures(spot, futures_price):
-    payoff = np.asarray(spot) - futures_price
-    return payoff
-# Return terminal payoff for a long futures at maturity.
-# The simplified profit is the same as the payoff for a long futures.
+    """Return terminal payoff and simplified profit for long futures."""
+    spot = np.asarray(spot, dtype=float)
+    payoff = spot - futures_price
+    profit = payoff.copy()
+    return payoff, profit
+
 
 def bull_call_spread(
     spot, lower_strike, upper_strike, lower_premium, upper_premium
