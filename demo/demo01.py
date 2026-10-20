@@ -32,7 +32,7 @@ plot_strategies(
     title="Options, Forward and Futures: Profit at Maturity",
 )
 
-# Also demonstrate the numerical calculations at one price.
+# demonstrate the numerical calculations at one price.
 payoff, profit = call(120, 100, 5)
 print(f"Call payoff at S_T = 120: {payoff:.2f}")
 print(f"Call profit at S_T = 120: {profit:.2f}")

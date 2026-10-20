@@ -19,7 +19,7 @@ strategies = [
     (
         "Bull call spread",
         bull_call_spread,
-        (90, 110, 15, 5),
+        (90, 110, 5, 15),
     ),
     (
         "Bear put spread",
@@ -35,7 +35,7 @@ plot_strategies(
     title="Bull Call vs Bear Put Spread",
 )
 
-# Check one numerical result.
+# Checking numerical result.
 payoff, profit = bull_call_spread(
     120, 90, 110, 15, 5
 )
