@@ -9,6 +9,11 @@ def call(spot, strike, premium):
     profit = payoff - premium
     return payoff, profit
 
+def put(spot, strike, premium):
+    """Return payoff and profit for a long put."""
+    spot = np.asarray(spot, dtype=float)
+    payoff = np.maximum(strike - spot, 0)
+    return payoff, payoff - premium
 
 def forward(spot, delivery_price):
     """Return payoff and profit for a long forward."""
