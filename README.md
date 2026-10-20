@@ -19,7 +19,7 @@ Python 3.8 or later, NumPy and Matplotlib.
 Clone the repository and navigate to its root directory. Then install the package in editable mode:
 
 ```bash
-python -m pip install -e .
+pip install -e .
 ```
 
 ## Example
